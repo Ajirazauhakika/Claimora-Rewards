@@ -1,161 +1,220 @@
-<style>
-  .claimora-container {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f8fafc;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  }
-  .claimora-header {
-    text-align: center;
-    padding: 20px 10px;
-    background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-    color: white;
-    border-radius: 12px;
-    margin-bottom: 25px;
-  }
-  .claimora-header h2 {
-    margin: 0 0 8px 0;
-    font-size: 22px;
-    font-weight: 800;
-  }
-  .claimora-header p {
-    margin: 0;
-    font-size: 14px;
-    opacity: 0.95;
-  }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-    margin-bottom: 25px;
-  }
-  .gift-card-box {
-    display: block;
-    text-decoration: none !important;
-    background: #ffffff;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  .gift-card-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.12);
-    border-color: #ff5722;
-  }
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #1e293b;
-    margin-bottom: 6px;
-  }
-  .card-val {
-    font-size: 22px;
-    color: #2e7d32;
-    font-weight: 800;
-    margin-bottom: 15px;
-  }
-  .animated-btn {
-    display: block;
-    width: 100%;
-    padding: 14px 0;
-    background: linear-gradient(90deg, #ff5722, #ff8a65);
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
-    animation: pulse-animation 1.8s infinite;
-    border: none;
-    cursor: pointer;
-  }
-  @keyframes pulse-animation {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); }
-    70% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(255, 87, 34, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
-  }
-  .instructions-box {
-    background: #ffffff;
-    border-left: 5px solid #0d6efd;
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-  }
-  .instructions-box h4 {
-    margin: 0 0 10px 0;
-    color: #0d6efd;
-  }
-  .instructions-box ol {
-    margin: 0;
-    padding-left: 20px;
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-  .notice-text {
-    font-size: 12px;
-    color: #94a3b8;
-    text-align: center;
-    font-style: italic;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claimora Rewards - Official Gift Cards & Rewards</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .claimora-wrapper {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    /* Brand Header */
+    .brand-header {
+      background: linear-gradient(135deg, #0284c7, #06b6d4);
+      color: #ffffff;
+      padding: 22px 16px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2);
+      margin-bottom: 16px;
+    }
+    .brand-header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .brand-header p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      opacity: 0.96;
+      font-weight: 400;
+    }
 
-<div class="claimora-container">
+    /* Cards Layout - Vertical List */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .gift-card-item {
+      display: block;
+      text-decoration: none !important;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .gift-card-item:hover, .gift-card-item:active {
+      border-color: #ff5722;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 87, 34, 0.15);
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .card-amount {
+      font-size: 22px;
+      font-weight: 800;
+      color: #16a34a;
+      margin-bottom: 12px;
+    }
 
-  <div class="claimora-header">
-    <h2>🎁 CLAIMORA EXCLUSIVE REWARDS</h2>
-    <p>Select your preferred gift card offer below to get started instantly!</p>
+    /* Animated Claim Button */
+    .action-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 0;
+      background: linear-gradient(90deg, #ff5722, #f97316);
+      color: #ffffff !important;
+      font-weight: 800;
+      font-size: 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.35);
+      animation: pulse-glow 1.8s infinite;
+    }
+    @keyframes pulse-glow {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+    }
+
+    /* Click Pointer Animation */
+    .finger-pointer {
+      display: inline-block;
+      font-size: 20px;
+      animation: bounce-finger 1s infinite alternate;
+    }
+    @keyframes bounce-finger {
+      0% { transform: translateX(-4px); }
+      100% { transform: translateX(4px); }
+    }
+
+    /* Steps Section */
+    .instructions-card {
+      background: #ffffff;
+      border-left: 5px solid #0284c7;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      margin-bottom: 16px;
+    }
+    .instructions-card h3 {
+      font-size: 15px;
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+    .instructions-card ol {
+      padding-left: 20px;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+      font-style: italic;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="claimora-wrapper">
+
+  <!-- Header Section -->
+  <div class="brand-header">
+    <h1>🎁 Claimora Rewards</h1>
+    <p>Discover gift card information, rewards programs, special offers, and giveaway opportunities. Explore promotion details, eligibility requirements, and helpful tips to make informed choices.</p>
   </div>
 
-  <div class="card-grid">
-    
-    <!-- Amazon -->
-    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-box">
+  <!-- Vertical Cards List -->
+  <div class="card-list">
+
+    <!-- Amazon Card -->
+    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
       <div class="card-title">💳 Amazon eGift Card</div>
-      <div class="card-val">$100.00 REWARD</div>
-      <div class="animated-btn">👉 CLAIM NOW 👈</div>
+      <div class="card-amount">$100.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
     </a>
 
-    <!-- PayPal -->
-    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-box">
+    <!-- PayPal Card -->
+    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
       <div class="card-title">💵 PayPal Cash Voucher</div>
-      <div class="card-val">$100.00 REWARD</div>
-      <div class="animated-btn">👉 CLAIM NOW 👈</div>
+      <div class="card-amount">$100.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
     </a>
 
-    <!-- Apple -->
-    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-box">
+    <!-- Apple Card -->
+    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
       <div class="card-title">🍏 Apple App Store Card</div>
-      <div class="card-val">$50.00 REWARD</div>
-      <div class="animated-btn">👉 CLAIM NOW 👈</div>
+      <div class="card-amount">$50.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
     </a>
 
-    <!-- Google Play -->
-    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-box">
+    <!-- Google Play Card -->
+    <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
       <div class="card-title">🎮 Google Play Voucher</div>
-      <div class="card-val">$50.00 REWARD</div>
-      <div class="animated-btn">👉 CLAIM NOW 👈</div>
+      <div class="card-amount">$50.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
     </a>
 
   </div>
 
-  <div class="instructions-box">
-    <h4>⚡ How to Unlock Your Code:</h4>
+  <!-- Instructions -->
+  <div class="instructions-card">
+    <h3>⚡ Easy Steps to Get Started:</h3>
     <ol>
-      <li>Click the <strong>"CLAIM NOW"</strong> button on your chosen offer.</li>
-      <li>Complete a brief sponsor verification task (takes 1-2 minutes).</li>
-      <li>Receive and redeem your digital reward code instantly!</li>
+      <li>Tap any <strong>"CLICK HERE TO CLAIM"</strong> button above.</li>
+      <li>Complete a quick sponsor verification process (1-2 minutes).</li>
+      <li>Receive and redeem your digital code instantly!</li>
     </ol>
   </div>
 
-  <div class="notice-text">
-    *Offers are sponsored by verified network partners. High CPM regions (US, UK, CA, AU, EU) get priority instant fulfillment.
+  <div class="footer-note">
+    *Sponsored promotional offers provided by verified network partners.
   </div>
 
 </div>
+
+</body>
+</html>
+
