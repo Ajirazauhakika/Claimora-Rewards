@@ -24,7 +24,8 @@
       max-width: 440px;
       margin: 0 auto;
     }
-    /* Brand Header */
+
+    /* Header Yenye Mwonekano wa Kibrand */
     .brand-header {
       background: linear-gradient(135deg, #0284c7, #06b6d4);
       color: #ffffff;
@@ -48,14 +49,14 @@
       font-weight: 400;
     }
 
-    /* Bouncing Gift Box Animation Container */
+    /* Boksi la Zawadi Linalocheza */
     .promo-banner {
       text-align: center;
       margin-bottom: 20px;
     }
     .bouncing-gift {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(255, 87, 34, 0.25);
@@ -67,7 +68,7 @@
       50% { transform: translateY(-8px) scale(1.04); box-shadow: 0 15px 30px rgba(255, 87, 34, 0.4); }
     }
 
-    /* Cards List - Medium Width */
+    /* Orodha ya Kadi za Wastani */
     .card-list {
       display: flex;
       flex-direction: column;
@@ -92,11 +93,24 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(255, 87, 34, 0.15);
     }
+
+    /* Kichwa cha Kadi na Nembo Halisi */
+    .card-title-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .brand-icon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
     .card-title {
       font-size: 17px;
       font-weight: 700;
       color: #1e293b;
-      margin-bottom: 4px;
     }
     .card-amount {
       font-size: 21px;
@@ -105,7 +119,7 @@
       margin-bottom: 12px;
     }
 
-    /* Animated Claim Button */
+    /* Kitufe cha Kuingizia Pesa */
     .action-button {
       display: flex;
       align-items: center;
@@ -127,7 +141,6 @@
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
     }
 
-    /* Click Pointer Animation */
     .finger-pointer {
       display: inline-block;
       font-size: 18px;
@@ -138,7 +151,7 @@
       100% { transform: translateX(3px); }
     }
 
-    /* Steps Section */
+    /* Maelekezo ya Chini */
     .instructions-card {
       width: 92%;
       margin: 0 auto 16px auto;
@@ -184,12 +197,15 @@
     <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop&q=60" alt="Exclusive Gift Rewards" class="bouncing-gift">
   </div>
 
-  <!-- Vertical Cards List (Medium Width) -->
+  <!-- Vertical Cards List with Real Brand Icons -->
   <div class="card-list">
 
     <!-- Amazon Card -->
     <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
-      <div class="card-title">💳 Amazon eGift Card</div>
+      <div class="card-title-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="brand-icon">
+        <span class="card-title">Amazon eGift Card</span>
+      </div>
       <div class="card-amount">$100.00 REWARD</div>
       <div class="action-button">
         <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
@@ -198,7 +214,10 @@
 
     <!-- PayPal Card -->
     <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
-      <div class="card-title">💵 PayPal Cash Voucher</div>
+      <div class="card-title-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="brand-icon">
+        <span class="card-title">PayPal Cash Voucher</span>
+      </div>
       <div class="card-amount">$100.00 REWARD</div>
       <div class="action-button">
         <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
@@ -207,7 +226,10 @@
 
     <!-- Apple Card -->
     <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
-      <div class="card-title">🍏 Apple App Store Card</div>
+      <div class="card-title-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="brand-icon">
+        <span class="card-title">Apple App Store Card</span>
+      </div>
       <div class="card-amount">$50.00 REWARD</div>
       <div class="action-button">
         <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
@@ -216,7 +238,10 @@
 
     <!-- Google Play Card -->
     <a href="https://uplcm.com/4/12012476" target="_blank" class="gift-card-item">
-      <div class="card-title">🎮 Google Play Voucher</div>
+      <div class="card-title-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Google_Play_2022_icon.svg" alt="Google Play" class="brand-icon">
+        <span class="card-title">Google Play Voucher</span>
+      </div>
       <div class="card-amount">$50.00 REWARD</div>
       <div class="action-button">
         <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
@@ -225,7 +250,7 @@
 
   </div>
 
-  <!-- Instructions -->
+  <!-- Easy Steps -->
   <div class="instructions-card">
     <h3>⚡ Easy Steps to Get Started:</h3>
     <ol>
